@@ -9,7 +9,11 @@
                 <p class="description">
                     <%= @recipe.description %>
                 </p>
-                <p>Submitted by <%= @recipe.user.email %></p>
+                <p>
+                    <%# if !@recipe.user.nil? %>
+                    <%= @recipe.user.try(:email) %> Submitted by</p> 
+                    <%#= @recipe.user.email %>
+                    <%# end %>
             </div>
         </div>
     </div>
